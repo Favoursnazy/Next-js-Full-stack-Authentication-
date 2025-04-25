@@ -29,7 +29,7 @@ import { toast } from "@/hooks/use-toast";
 const VerifyMfa = () => {
   const params = useSearchParams();
   const router = useRouter();
-  const email = params.get("email");
+  const email = params?.get("email");
 
   const { mutate, isPending } = useMutation({
     mutationFn: verifyMfaForLoginMutationFn,

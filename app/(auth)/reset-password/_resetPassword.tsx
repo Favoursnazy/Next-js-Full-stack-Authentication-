@@ -25,8 +25,8 @@ export default function ResetPassword() {
   const router = useRouter();
 
   const params = useSearchParams();
-  const code = params.get("code");
-  const exp = Number(params.get("exp"));
+  const code = params?.get("code");
+  const exp = Number(params?.get("exp"));
   const now = Date.now();
 
   const isValid = code && exp && exp > now;
