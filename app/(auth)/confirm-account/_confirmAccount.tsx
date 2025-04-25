@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function ComfirmAccount() {
   const params = useSearchParams();
   const router = useRouter();
-  const code = params.get("code")!;
+  const code = params.get("code") ? params.get("code") : "";
 
   const { mutate, isPending } = useMutation({
     mutationFn: verifyEmailMutationFn,
