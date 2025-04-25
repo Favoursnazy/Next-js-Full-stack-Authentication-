@@ -7,9 +7,9 @@ import { useMutation } from "@tanstack/react-query";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ComfirmAccount() {
-  const params = useSearchParams() || null;
+  const params = useSearchParams();
   const router = useRouter();
-  const code = params.get("code");
+  const code = params.get("code")!;
 
   const { mutate, isPending } = useMutation({
     mutationFn: verifyEmailMutationFn,
